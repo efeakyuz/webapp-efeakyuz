@@ -1,101 +1,96 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import firebase from "../firebase.js";
 import Form from "react-bootstrap/Form";
 import { InputGroup, Col, FormControl, Button } from "react-bootstrap";
 
 export default function User() {
-    const [emailAddress, setEmailAddress] = useState();
-    const [firstName, setFirstName] = useState();
-    const [userId, setUserId] = useState();
-    const [id, setId] = useState();
+  const [emailAddress, setEmailAddress] = useState();
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+  const [password, setPassword] = useState();
 
-    const handleOnChangeName = (e) => {
-        setFirstName(e.target.value);
-    }
+  const handleOnChangeFirstName = (e) => {
+    setFirstName(e.target.value);
+  };
 
-    const handleOnChangeMail = (e) => {
-        setEmailAddress(e.target.value); 
-    }
+  const handleOnChangeLastName = (e) => {
+    setLastName(e.target.value);
+  };
 
-    const handleOnChangeUserId = (e) => {
-        setUserId(e.target.value); 
-    }
-    const handleOnChangeId = (e) => {
-        setId(e.target.value); 
-    }
+  const handleOnChangeMail = (e) => {
+    setEmailAddress(e.target.value);
+  };
 
-    const createUser = () => {
-        const userRef = firebase.ref("users");
-        const userList = {
-            emailAddress,
-            firstName,
-            userId
-        };
+  const handleOnChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
-        userRef.push(userList);
-        /* userRef.setValue(userList); */
-    }
+  const createUser = () => {
+    const userRef = firebase.ref("users");
+    const userList = {
+      emailAddress,
+      firstName,
+      lastName,
+      password,
+      admin:false
+    };
 
-    return (
-        <div className="card">
-        <h5 className="card-header">React Firebase Database CRUD</h5>
-        <div className="card-body">
-          <Form>
-            <Form.Row className="align-items-center">
-             {/*  <Col xs="3">
-                <Form.Label htmlFor="inlineFormInput" srOnly>
-                  Id
-                </Form.Label>
-                <Form.Control
-                  className="mb-2"
-                  id="inlineFormInput"
-                  placeholder="Id"
-                  onChange={handleOnChangeId}
+    userRef.push(userList);
+    /* userRef.setValue(userList); */
+  };
+
+  return (
+    <div className="card">
+      <div className="card-body">
+        <Form>
+          <Form.Row className="align-items-center">
+            <Col xs="3">
+              <Form.Control
+                className="mb-2"
+                id="firstName"
+                placeholder="Ad"
+                onChange={handleOnChangeFirstName}
+                value={firstName}
+              />
+            </Col>
+            <Col xs="3">
+              <Form.Control
+                className="mb-2"
+                id="lastName"
+                placeholder="Soyad"
+                onChange={handleOnChangeLastName}
+                value={lastName}
+              />
+            </Col>
+            <Col xs="3">
+              <InputGroup className="mb-2">
+                <FormControl
+                  id="email"
+                  placeholder="Email"
+                  onChange={handleOnChangeMail}
+                  value={emailAddress}
                 />
-              </Col> */}
-              <Col xs="3">
-                <Form.Label htmlFor="inlineFormInput" srOnly>
-                  Id
-                </Form.Label>
-                <Form.Control
-                  className="mb-2"
-                  id="inlineFormInput"
-                  placeholder="Id"
-                  onChange={handleOnChangeUserId}
+              </InputGroup>
+            </Col>
+            <Col xs="3">
+              <InputGroup className="mb-2">
+                <FormControl
+                  id="password"
+                  placeholder="Password"
+                  onChange={handleOnChangePassword}
+                  value={password}
+                  type="password"
                 />
-              </Col>
-              <Col xs="3">
-                <Form.Label htmlFor="inlineFormInput" srOnly>
-                  Name
-                </Form.Label>
-                <Form.Control
-                  className="mb-2"
-                  id="inlineFormInput"
-                  placeholder="Jane Doe"
-                  onChange={handleOnChangeName}
-                />
-              </Col>
-              <Col xs="3">
-                <Form.Label htmlFor="inlineFormInputGroup" srOnly>
-                  Mail
-                </Form.Label>
-                <InputGroup className="mb-2">
-                  <FormControl
-                    id="inlineFormInputGroup"
-                    placeholder="Username"
-                    onChange={handleOnChangeMail}
-                    value={emailAddress}
-                  />
-                </InputGroup>
-              </Col>
-              <Col xs="3">
-                <Button type="submit" className="mb-2" onClick={createUser}>
-                  Submit
-                </Button>
-              </Col>
-            </Form.Row>
-          </Form>
-        </div>
+              </InputGroup>
+            </Col>
+            <Col xs="3">
+              <Button type="submit" className="mb-2" onClick={createUser}>
+                Kayıt
+              </Button>
+            </Col>
+          </Form.Row>
+        </Form>
       </div>
-    )
+    </div>
+  );
 }

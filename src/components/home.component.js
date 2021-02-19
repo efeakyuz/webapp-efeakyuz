@@ -4,7 +4,7 @@ import logo from "../logo.svg";
 export default class home extends Component {
   render() {
     return (
-      <div className="mt-2">
+      <div className="mt-2 App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Work in Progress</p>
       </div>

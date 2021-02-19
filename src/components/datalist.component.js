@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
 import firebase from "../firebase.js";
 import UserCard from "./user-card.component.js";
 import User from "./user.component.js";
@@ -22,7 +21,6 @@ export default function Datalist() {
 
   return (
     <div className="mt-5">
-        <Card>selam</Card>
       <User/>
       <div className="container">
         <div className="row mt-5">
