@@ -28,12 +28,12 @@ function App() {
             </li> */}
           </div>
         </nav>
-        <div className="container">
+        <div className="container center-img">
           <Route path="/" exact>
             {" "}
             <Home />{" "}
           </Route>
-          <Route exact path="/datalist">
+          <Route path="/datalist">
             <DataList />
           </Route>
         </div>
