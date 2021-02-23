@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import firebase from "../firebase.js";
+import firebaseConfig from "../firebase.js";
 import Form from "react-bootstrap/Form";
-import { InputGroup, Col, FormControl, Button } from "react-bootstrap";
+import { FormControl, Button } from "react-bootstrap";
 
 export default function User() {
   const [emailAddress, setEmailAddress] = useState();
@@ -26,13 +26,13 @@ export default function User() {
   };
 
   const createUser = () => {
-    const userRef = firebase.ref("users");
+    const userRef = firebaseConfig.database().ref("users");
     const userList = {
       emailAddress,
       firstName,
       lastName,
       password,
-      admin:false
+      admin: false,
     };
 
     userRef.push(userList);
@@ -40,56 +40,53 @@ export default function User() {
   };
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <Form>
-          <Form.Row className="align-items-center">
-            <Col xs="3">
+    <div className="container">
+      <div className="card">
+        <div className="card-body">
+          <Form>
+            <Form.Group>
+              <Form.Label style={{float:"left"}}>First Name</Form.Label>
               <Form.Control
-                className="mb-2"
                 id="firstName"
                 placeholder="Ad"
                 onChange={handleOnChangeFirstName}
                 value={firstName}
               />
-            </Col>
-            <Col xs="3">
+            </Form.Group>
+            <Form.Group>
+              <Form.Label style={{float:"left"}}>Last Name</Form.Label>
               <Form.Control
-                className="mb-2"
                 id="lastName"
                 placeholder="Soyad"
                 onChange={handleOnChangeLastName}
                 value={lastName}
               />
-            </Col>
-            <Col xs="3">
-              <InputGroup className="mb-2">
-                <FormControl
-                  id="email"
-                  placeholder="Email"
-                  onChange={handleOnChangeMail}
-                  value={emailAddress}
-                />
-              </InputGroup>
-            </Col>
-            <Col xs="3">
-              <InputGroup className="mb-2">
-                <FormControl
-                  id="password"
-                  placeholder="Password"
-                  onChange={handleOnChangePassword}
-                  value={password}
-                  type="password"
-                />
-              </InputGroup>
-            </Col>
-            <Col xs="3">
-              <Button type="submit" className="mb-2" onClick={createUser}>
-                Kayıt
-              </Button>
-            </Col>
-          </Form.Row>
-        </Form>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label style={{float:"left"}}>Email</Form.Label>
+              <FormControl
+                id="email"
+                placeholder="Email"
+                onChange={handleOnChangeMail}
+                value={emailAddress}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label style={{float:"left"}}>Password</Form.Label>
+              <FormControl
+                id="password"
+                placeholder="Password"
+                onChange={handleOnChangePassword}
+                value={password}
+                type="password"
+              />
+            </Form.Group>
+
+            <Button type="submit" onClick={createUser}>
+              Kayıt
+            </Button>
+          </Form>
+        </div>
       </div>
     </div>
   );

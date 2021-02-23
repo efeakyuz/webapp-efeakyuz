@@ -1,11 +1,12 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import firebase from "../firebase.js";
+import firebaseConfig from "../firebase.js";
 
 export default function UserCard({x}) {
 
     const deleteUser = () => {
-        const dataRef = firebase.ref("users").child(x.id);
+        const dataRef = firebaseConfig.database().ref("users").child(x.id);
+        console.log(x)
         dataRef.remove();
     }
 
@@ -16,7 +17,6 @@ export default function UserCard({x}) {
         <h6 className="card-subtitle mb-2 text-muted">{x.emailAddress}</h6>
       </div>
       <Button className="bg-danger" onClick={deleteUser}>
-        {" "}
         Delete
       </Button>
     </div>

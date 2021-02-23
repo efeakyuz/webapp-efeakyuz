@@ -1,46 +1,35 @@
-import "./App.css";
-import * as React from "react";
-import { Switch, Route, Link, NavLink } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Admin from "./components/Admin";
+import Dashboard from "./components/Dashboard";
+import Home from "./components/Home";
+import LogIn from "./components/LogIn";
+import { AuthProvider } from "./services/Auth";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import DataList from "./components/datalist.component";
-import Home from "./components/home.component";
-import Footer from "./components/footer.component";
+import "./App.css"
+import NotFound from './components/404';
+import Footer from './components/footer.component';
 
-function App() {
+const App = () => {
   return (
-    <div className="page-container App">
-      <div className="content-wrap">
-        <nav className="navbar sticky-top navbar-expand navbar-dark bg-dark">
-          <a href="/" className="navbar-brand">
-            Efe Akyuz
-          </a>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <NavLink to="/datalist" activeClassName="hurray">
-                Data
-              </NavLink>
-            </li>
-            {/* <li className="nav-item">
-              <Link to={"/add"} className="nav-link">
-                Add
-              </Link>
-            </li> */}
-          </div>
-        </nav>
-        <div className="container center-img">
-          <Route path="/" exact>
-            {" "}
-            <Home />{" "}
-          </Route>
-          <Route path="/datalist">
-            <DataList />
-          </Route>
-        </div>
-      </div>
-      <Footer />
+    <>
+    <div className="content">
+      <AuthProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route exact path="/admin" component={Admin}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
+          <Route exact path="/login" component={LogIn}/>
+          <Route component={NotFound}/>
+        </Switch>
+      </Router>
+    </AuthProvider>
     </div>
-  );
+    
+    <Footer/>
+    </>
+  )
 }
-
 export default App;

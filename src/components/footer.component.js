@@ -1,16 +1,16 @@
 import React from 'react'
-import "../content/css/footer.css"
+import "../App.css"
 
 export default function Footer() {
     return (
-        <div className="main-footer">
+        <footer className="footer">
             <div className="container">
-                <div className="Row m-2">
+                <div className="Row m-3">
                     <p className="col-sm">
                         &copy;{new Date().getFullYear()} Made with <span role="img" aria-label="sheep">💜</span> Efe Akyuz
                     </p>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
