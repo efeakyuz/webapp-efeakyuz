@@ -7,7 +7,7 @@ export default function Footer() {
             <div className="container">
                 <div className="Row m-3">
                     <p className="col-sm">
-                        &copy;{new Date().getFullYear()} Made with <span role="img" aria-label="sheep">💜</span> Efe Akyuz
+                        &copy;{new Date().getFullYear()} Made with <span role="img" aria-label="heart">💜</span> Efe Akyuz
                     </p>
                 </div>
             </div>

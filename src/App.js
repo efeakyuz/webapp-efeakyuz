@@ -10,11 +10,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css"
 import NotFound from './components/404';
 import Footer from './components/footer.component';
+import Nav from './components/HomeNavigation';
 
 const App = () => {
   return (
     <>
     <div className="content">
+    <Nav/>
       <AuthProvider>
       <Router>
         <Switch>
