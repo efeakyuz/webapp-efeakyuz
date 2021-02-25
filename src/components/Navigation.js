@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form, Nav, Navbar } from "react-bootstrap";
-import firebaseConfig from "../firebase";
+import firebaseConfig from "../env/firebase";
 
 export default function Navigation() {
   return (

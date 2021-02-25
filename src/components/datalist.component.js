@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import firebaseConfig from "../firebase.js";
+import firebaseConfig from "../env/firebase";
 import UserCard from "./user-card.component.js";
 import User from "./user.component.js";
 
@@ -36,3 +36,4 @@ export default function Datalist() {
     </div>
   );
 }
+

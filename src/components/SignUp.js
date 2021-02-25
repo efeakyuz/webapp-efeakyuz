@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
-import firebaseConfig from "../firebase";
+import firebaseConfig from "../env/firebase";
 import content from "../static/registerContent";
 
 const SignUp = () => {

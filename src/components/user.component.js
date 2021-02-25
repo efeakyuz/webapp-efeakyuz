@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import firebaseConfig from "../firebase.js";
+import firebaseConfig from "../env/firebase";
 import Form from "react-bootstrap/Form";
 import { FormControl, Button } from "react-bootstrap";
 

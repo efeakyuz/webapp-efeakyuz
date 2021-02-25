@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import firebaseConfig from "../firebase.js";
+import firebaseConfig from "../env/firebase";
 
 export default function UserCard({x}) {
 

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Redirect } from "react-router-dom";
 import { AuthContext } from "../services/Auth";
-import firebaseConfig from "../firebase";
+import firebaseConfig from "../env/firebase";
 import content from "../static/registerContent";
 import { Button, Form } from "react-bootstrap";
 
