@@ -4,7 +4,7 @@ import "../content/css/home.css"
 
 const Nav = () => {
   return (
-    <Navbar className="nav" sticky="top">
+    <Navbar className="navi" sticky="top">
       <Navbar.Brand href="/" className="logo">efeakyuz<span className="blinking-cursor">|</span></Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">

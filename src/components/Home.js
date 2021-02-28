@@ -1,5 +1,6 @@
 import React from "react";
 import "../content/css/home.css";
+import * as Icon from "react-bootstrap-icons";
 
 const Home = () => {
   return (
@@ -19,7 +20,24 @@ const Home = () => {
             <div className="info-text">Aviation Freak</div>
           </div>
           <div className="row4">
-            <div className="info-text">Currently Working at <a target="_blank" rel="noopener noreferrer" href="https://www.smartapps.com.tr">Smartapps</a></div>
+            <div className="info-text">
+              Currently Working at{" "}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.smartapps.com.tr"
+              >
+                Smartapps
+              </a>
+            </div>
+          </div>
+          <div className="row5">
+            <a href="https://github.com/efeakyuz">
+              <Icon.Github />
+            </a>
+            <a href="https://twitter.com/efenakyuz">
+              <Icon.Twitter />
+            </a>
           </div>
         </div>
       </div>

@@ -1,24 +1,24 @@
-main{
-    background-color: rgb(253,95,32);
+/* main{
+
     height: 100%;
-}
+} */
 
-.nav{
-    background-color: rgb(253,95,32);
-}
-
-.logo{
+.logo {
     font-family: monospace;
     font-weight: 600;
     font-size: 22px !important;
     color: #ffcd92 !important;
 }
 
-.logo a{
+.logo a {
     color: #ffcd92 !important;
 }
 
-.container-top{
+.logo a:hover {
+    text-shadow: 2px 2px #a04709;
+}
+
+.container-top {
     position: relative;
     top: 9rem;
     color: #ffcd92;
@@ -27,44 +27,72 @@ main{
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: min-content min-content min-content min-content min-content;
+    grid-template-rows: min-content min-content min-content min-content min-content min-content;
     gap: 0px 0px;
     grid-template-areas:
-      "entry"
-      "row1"
-      "row2"
-      "row3"
-      "row4";
-  }
-  
-  .entry { grid-area: entry; }
-  
-  .row1 { grid-area: row1; }
-  
-  .row2 { grid-area: row2; }
-  
-  .row3 { grid-area: row3; }
-  
-  .row4 { grid-area: row4; }
-  
-.entry-text{
+        "entry"
+        "row1"
+        "row2"
+        "row3"
+        "row4"
+        "row5";
+}
+
+.entry {
+    grid-area: entry;
+}
+
+.row1 {
+    grid-area: row1;
+}
+
+.row2 {
+    grid-area: row2;
+}
+
+.row3 {
+    grid-area: row3;
+}
+
+.row4 {
+    grid-area: row4;
+}
+
+.row5 {
+    grid-area: row5;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.row5 a {
+    color: #ffcd92;
+    margin: 0 2rem 0 2rem;
+}
+
+.row5 a:hover {
+    color: #a04709;
+}
+
+.entry-text {
     font-family: monospace;
     font-weight: 400;
     font-size: 12rem;
     text-shadow: 7px 6px #a04709;
 }
 
-.info-text{
+.info-text {
     font-family: monospace;
     font-weight: 400;
     font-size: 3rem;
     text-shadow: 3px 1px #a04709;
 }
 
-.info-text a{
+.info-text a {
     color: #ffcd92;
 }
-.info-text a:hover{
+
+.info-text a:hover {
     color: #ffcd92;
 }
 
@@ -82,49 +110,82 @@ main{
     -ms-animation: 1s blink step-end infinite;
     -o-animation: 1s blink step-end infinite;
     animation: 1s blink step-end infinite;
-  }
-  
-  @keyframes blink {
-    from, to {
-      color: transparent;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        color: transparent;
     }
+
     50% {
-      color: #ffcd92;
+        color: #ffcd92;
     }
-  }
-  
-  @-moz-keyframes blink {
-    from, to {
-      color: transparent;
+}
+
+@-moz-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
     }
+
     50% {
-      color: black;
+        color: black;
     }
-  }
-  
-  @-webkit-keyframes blink {
-    from, to {
-      color: transparent;
+}
+
+@-webkit-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
     }
+
     50% {
-      color: black;
+        color: black;
     }
-  }
-  
-  @-ms-keyframes blink {
-    from, to {
-      color: transparent;
+}
+
+@-ms-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
     }
+
     50% {
-      color: black;
+        color: black;
     }
-  }
-  
-  @-o-keyframes blink {
-    from, to {
-      color: transparent;
+}
+
+@-o-keyframes blink {
+
+    from,
+    to {
+        color: transparent;
     }
+
     50% {
-      color: black;
+        color: black;
     }
-  }
+}
+
+
+@media screen and (max-width:990px) {
+
+    .container-top {
+        top: 2rem;
+    }
+}
+@media screen and (max-width:480px) {
+
+    .navi {
+        background-color: #882c00eb !important;
+    }
+
+    .container-top {
+        top: 0
+    }
+}
