@@ -33,4 +33,4 @@ jobs:
             cd home
             npm install
             npm run build
-            serve -p 3000 build/
+            serve -s build
