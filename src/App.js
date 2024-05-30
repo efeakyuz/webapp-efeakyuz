@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Admin from "./components/Admin";
-import Dashboard from "./components/Dashboard";
+/* import Admin from "./components/Admin";
+import Dashboard from "./components/Dashboard"; */
 import Home from "./components/Home";
-import LogIn from "./components/LogIn";
-import { AuthProvider } from "./services/Auth";
+/* import LogIn from "./components/LogIn";
+import { AuthProvider } from "./services/Auth"; */
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./App.css"
@@ -17,7 +17,7 @@ const App = () => {
     <>
     <div className="content">
     <Nav/>
-      <AuthProvider>
+      {/* <AuthProvider> */}
       <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
@@ -27,7 +27,7 @@ const App = () => {
           <Route component={NotFound}/>
         </Switch>
       </Router>
-    </AuthProvider>
+    {/* </AuthProvider> */}
     </div>
     
     <Footer/>
