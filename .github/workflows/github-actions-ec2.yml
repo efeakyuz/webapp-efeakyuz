@@ -23,9 +23,6 @@ jobs:
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
 
-      - name: Download Serve
-        run: npm install --global serve
-
       - name: Executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
         with:
@@ -36,5 +33,4 @@ jobs:
             cd home
             npm install
             npm build
-            npm i serve
             serve -p 3000 build/
